@@ -7,3 +7,30 @@ Content-Type: application/json
     "email":"liz@gmail.com",
     "password":"1234"
 }
+
+###login
+
+POST http://127.0.0.1:8000/api/v1/auth/login
+Accept: application/json
+Content-Type: application/json
+
+{
+    
+    "email":"liz@gmail.com",
+    "password":"1234"
+}
+
+###perfil
+
+GET http://127.0.0.1:8000/api/v1/auth/profile
+Accept: application/json
+Authorization: Authorization: Bearer 8|laravel_sanctum_s5wwbsKAvRqTa7pTRmI3kYE91x0O7SVuVDr5IIoye6479b9d
+
+###logout
+
+POST http://127.0.0.1:8000/api/v1/auth/logout
+Accept: application/json
+Authorization: Authorization: 6|laravel_sanctum_u7aC7sQygGlQNecHJzREF1D3GKD42tjYs6TolnAL5e67f353
+
+
+
