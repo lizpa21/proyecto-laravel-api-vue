@@ -61,10 +61,9 @@ class AuthController extends Controller
         
     }
     public function funSalir(Request $request){
-        $usuario=$request->user();
-        $usuario->tokens->delete();
+        $usuario = $request->user();
+        $usuario->tokens()->delete();
 
-        return response()->json(["message"=>"log out"]);
-        
+        return response()->json(["message" => "Log OUT"]);
     }
 }

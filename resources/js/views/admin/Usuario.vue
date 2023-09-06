@@ -1,0 +1,3 @@
+<template>
+    <h1>Gestion de Usuarios</h1>
+</template>

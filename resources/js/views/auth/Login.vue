@@ -18,19 +18,23 @@
 
 <script setup>
     import { ref } from "vue"
+    import { useRouter } from "vue-router";
     import * as authService from "../../services/auth.service"
         // variables
         const titulo = ref("Otro titulo 2");
         const descripcion = "Otra descripción 2";
+        const router  = useRouter ()
         const token = ref({})
-        const datos = ref({email: "micorreo@mail.com", password: "mipass"})
+        const datos = ref({email: "admin@gmail.com", password: "1234"})
         // metodos
         async function funIngresar(){
             // alert("Ingresando... 2")
             const {data} = await authService.login(datos.value)
             console.log(data)
             token.value = data
-            localStorage.setItem("access_token", data.acces_token)
+            localStorage.setItem("access_token", data.acces_token);
+
+            router.push("/perfil")
         }
 </script>
 

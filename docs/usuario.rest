@@ -1,0 +1,30 @@
+GET http://127.0.0.1:8000/api/usuario
+
+### guardar
+POST http://127.0.0.1:8000/api/usuario
+Accept: application/json
+Content-Type: application/json
+
+{
+    "name": "Carlos Prueba",
+    "email": "carlos.prueba@mail.com",
+    "password": "carlos54321"
+}
+
+### mostrar
+GET http://127.0.0.1:8000/api/usuario/3
+Accept: application/json
+
+### modificar
+PUT http://127.0.0.1:8000/api/usuario/3
+Accept: application/json
+Content-Type: application/json
+
+{
+    "name": "Nuevo Ana Modificado",
+    "email": "ana@mail.com",
+    "password": "ana54321"
+}
+
+### eliminar
+DELETE http://127.0.0.1:8000/api/usuario/3
