@@ -1,8 +1,8 @@
 import {http} from "./axios-interceptor";
 
 export default {
-    listar(){
-        return http().get("/usuario");
+    listar(q=""){
+        return http().get("/usuario?q="+q);
     },
     guardar(datos){
         return http().post("/usuario", datos);
