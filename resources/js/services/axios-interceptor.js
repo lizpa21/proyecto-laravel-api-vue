@@ -1,7 +1,7 @@
 import axios from 'axios'
 
-//const urlbase = "http://127.0.0.1:8000/api"
-const urlbase = "api"
+// const urlbase = "http://127.0.0.1:8000/api"
+const urlbase = "/api"
 
 export const http = () => {
     const token = localStorage.getItem("access_token")
@@ -21,6 +21,11 @@ export const http = () => {
         },
         (error) => {
             // procesamos error 401, 403
+            if(error.response.status === 401){
+                localStorage.removeItem("access_token");
+
+                window.location = "/login"
+            }
     
             return Promise.reject(error);
         }
